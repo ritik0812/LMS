@@ -1,0 +1,143 @@
+{{>header}}
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <!-- Header -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="admin-dashboard">Library Management System (LMS)</a>
+            </div>
+
+            <!-- Display in navbar, User Name & Email Once Logged In -->
+            <font style="color:white;">
+                <span><strong>Welcome : {{name}}</strong></span>
+            </font>
+
+            <font style="color:white;">
+                <span><strong>Welcome : {{email}}</strong></span>
+            </font>
+
+            <!-- Links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">My Profile</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="admin-view-profile">View Profile</a>
+                        <a class="dropdown-item" href="admin-edit-profile">Edit Profile</a>
+                        <a class="dropdown-item" href="admin-change-password">Change Password</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminLogout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    {{!-- Dasdboard Navbar --}}
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#e3f2fd">
+        <div class="container-fluid">
+
+            <!-- Links -->
+            <ul class="nav navbar-nav navbar-center">
+
+                {{!-- Dashboard --}}
+                <li class="nav-item ">
+                    <a class="nav-link" href="admin-dashboard">Dasdboard</a>
+                </li>
+
+                {{!-- BOOKS --}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">Book</a>
+                    <div class="dropdown-menu">
+                        <a href="add-new-book" class="dropdown-item">Add New Book</a>
+                        <a href="manage-book" class="dropdown-item">Manage Books</a>
+                    </div>
+                </li>
+
+                {{!-- Category --}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">Category</a>
+                    <div class="dropdown-menu">
+                        <a href="add-new-category" class="dropdown-item">Add New Category</a>
+                        <a href="manage-category" class="dropdown-item">Manage Category</a>
+                    </div>
+                </li>
+
+                {{!-- Author --}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">Author</a>
+                    <div class="dropdown-menu">
+                        <a href="add-new-author" class="dropdown-item">Add New Author</a>
+                        <a href="manage-author" class="dropdown-item">Manage Author's</a>
+                    </div>
+                </li>
+
+                {{!-- Issue Book --}}
+                <li class="nav-item ">
+                    <a class="nav-link" href="issue-book">Issue Book</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <!-- Running Line Text -->
+    <span>
+        <marquee>
+            <h4>This is Library Management System. Library opens at 8:00 AM and closes at 8:00 PM</h4>
+        </marquee>
+    </span>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form action="add-new-book" method="post">
+                <div class="form-group">
+                    <label for="name">Book Name</label>
+                    <input type="text" name="bookName" class="form-control" required="true">
+                </div>
+                <div class="form-group">
+                    <label for="name">Book Author</label>
+                    <input type="text" name="bookAuthor" class="form-control" required="true">
+                </div>
+                <div class="form-group">
+                    <label for="name">Category Name</label>
+                    <input type="text" name="bookCategory" class="form-control" required="true">
+                </div>
+                <div class="form-group">
+                    <label for="name">Book Number</label>
+                    <input type="text" name="bookNumber" class="form-control" required="true">
+                </div>
+                <div class="form-group">
+                    <label for="name">Book Price</label>
+                    <input type="text" name="bookPrice" class="form-control" required="true">
+                </div>
+
+                <button class="btn btn-success" name="addBook">Add Book</button>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+
+
+</body>
+
+
+<script type="text/javascript">
+    function preventBack() {
+        window.history.forward();
+    }
+    setTimeout("preventBack()", 0);
+    let myVar = window.location.href;
+</script>
+
+</html>

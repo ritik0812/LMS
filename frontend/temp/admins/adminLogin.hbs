@@ -1,0 +1,85 @@
+{{>header}}
+
+<!-- Navbar -->
+{{>navbar}}
+
+<br>
+
+<!-- Running Line Text -->
+{{>slidetext}}
+
+<br>
+<br>
+
+{{!-- Middle Components--}}
+<div class="row">
+
+    <!-- Left Side -->
+    <div class="col-md-4" id="side-bar">
+        <h5>Library Timing</h5>
+        <ul>
+            <li>Opening Time: 8:00 AM</li>
+            <li>Closing Time: 8:00 PM</li>
+            <li>Sunday's Off</li>
+        </ul>
+
+        <h5>What we provide ?</h5>
+        <ul>
+            <li>Full Furniture</li>
+            <li>Free Wi-fi</li>
+            <li>News Paper</li>
+            <li>Discussion Room</li>
+            <li>RO Water</li>
+            <li>Peacefull Environment</li>
+        </ul>
+    </div>
+
+    <!-- Right Side -->
+    <div class="col-md-8" id="main-content">
+        <center>
+            <h3>
+                Admin Login Form
+            </h3>
+        </center>
+        <form action="adminLogin" method="post">
+
+
+            <!-- Email ID -->
+            <div class="form-group">
+                <label for="name">Email ID:</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="name">Password:</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+
+
+            <!-- Button -->
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+        <br>
+        <br>
+
+        <!-- Wrong Password/Email  -->
+        <center>
+            <span class="alert-danger" style="visibility: hidden;" id="wrong">Wrong Credentials</span>
+        </center>
+
+    </div>
+</div>
+
+{{!--
+<script type="text/javascript">
+    function preventBack() {
+        window.history.forward();
+    }
+
+    setTimeout("preventBack()", 0);
+    let myVar = window.location.href;
+</script> --}}
+
+{{>footer}}
